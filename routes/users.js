@@ -10,13 +10,13 @@ router.get('/', function(req, res, next) {
 
 router.get('/save', function(req, res, next) {
 	var shopdata = {
-		shopname: "전형우샵",
-		address: "주소1"
+		shopname: "셀럽진영샵",
+		address: "주소5"
 	};
 
 	var resdata = {
-		shopname: "곽솔희샵",
-		address: "주소2"
+		shopname: "진영샵",
+		address: "주소5"
 	}
 
 	var hairshopdb = new hairshop(shopdata);
