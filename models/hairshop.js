@@ -6,8 +6,7 @@ var Schema = mongoose.Schema;
 
 var HairshopSchema = new Schema({
 	shopname: String,
-	address: String,
-	date: { type: Date, default: Date.now }
+	address: String
 });
 
 //mongoDB에 hairshop테이블 생성
