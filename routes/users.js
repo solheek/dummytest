@@ -37,11 +37,11 @@ router.get('/save', function(req, res, next) {
 
 router.get('/savelocation', function(req, res, next) {
 	var data = {
-		shopname: "호암교수회관",
-		address: "서울 관악구 낙성대동 239-1",
-		latitude: 37.4679090,
-		longitude: 126.9589190,
-		cutprice: 5000
+		shopname: "성남중학교",
+		address: "서울 동작구 대방동길 74",
+		latitude: 37.5006530,
+		longitude: 126.9253100,
+		cutprice: 20000
 	};
 
 	var locationdb = new location(data);
