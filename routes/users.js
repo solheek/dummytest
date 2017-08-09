@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var hairshop = require('../models/hairshop');
 var reservation = require('../models/reservation');
+var location = require('../models/location');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -34,13 +35,22 @@ router.get('/save', function(req, res, next) {
 	});
 });
 
-router.get('/hairshoplist', function(req, res, next) {
-	hairshop.find({}, function(err, docs){
+router.get('/savelocation', function(req, res, next) {
+	var data = {
+		shopname: "호암교수회관",
+		address: "서울 관악구 낙성대동 239-1",
+		latitude: 37.4679090,
+		longitude: 126.9589190,
+		cutprice: 5000
+	};
+
+	var locationdb = new location(data);
+
+	locationdb.save(function(err, doc){
 		if(err) return next(err);
-		console.log('list docs=', docs);
-		res.json({
-			successcode: 0,
-			hairshoplist: docs});
+		console.log('doc=', doc);
+
+		res.json({doc:doc});
 	});
 });
 
@@ -49,17 +59,7 @@ router.get('/hairshoplist', function(req, res, next) {
 		if(err) return next(err);
 		console.log('list docs=', docs);
 		res.json({
-			successcode: 0,
-			hairshoplist: docs});
-	});
-});
-
-router.get('/hairshoplist', function(req, res, next) {
-	hairshop.find({}, function(err, docs){
-		if(err) return next(err);
-		console.log('list docs=', docs);
-		res.json({
-			successcode: 0,
+			successcode: 1,
 			hairshoplist: docs});
 	});
 });
@@ -69,8 +69,18 @@ router.get('/reservationlist', function(req, res, next) {
 		if(err) return next(err);
 		console.log('list docs=', docs);
 		res.json({
-			successcode: 0,
+			successcode: 1,
 			reservationlist: docs});
+	});
+});
+
+router.get('/locationlist', function(req, res, next) {
+	location.find({}, function(err, docs){
+		if(err) return next(err);
+		console.log('list docs=', docs);
+		res.json({
+			successcode: 1,
+			locationlist: docs});
 	});
 });
 
