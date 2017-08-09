@@ -39,27 +39,7 @@ router.get('/hairshoplist', function(req, res, next) {
 		if(err) return next(err);
 		console.log('list docs=', docs);
 		res.json({
-			successcode: 0,
-			hairshoplist: docs});
-	});
-});
-
-router.get('/hairshoplist', function(req, res, next) {
-	hairshop.find({}, function(err, docs){
-		if(err) return next(err);
-		console.log('list docs=', docs);
-		res.json({
-			successcode: 0,
-			hairshoplist: docs});
-	});
-});
-
-router.get('/hairshoplist', function(req, res, next) {
-	hairshop.find({}, function(err, docs){
-		if(err) return next(err);
-		console.log('list docs=', docs);
-		res.json({
-			successcode: 0,
+			successcode: 1,
 			hairshoplist: docs});
 	});
 });
@@ -69,7 +49,7 @@ router.get('/reservationlist', function(req, res, next) {
 		if(err) return next(err);
 		console.log('list docs=', docs);
 		res.json({
-			successcode: 0,
+			successcode: 1,
 			reservationlist: docs});
 	});
 });
