@@ -9,7 +9,8 @@ var LocationSchema = new Schema({
 	address: String, //주소
 	latitude: Number, //위도
 	longitude: Number, //경도
-	cutprice: Number //가격
+	cutprice: Number, //가격
+	shoppicture: String //image
 });
 
 //mongoDB에 hairshop테이블 생성
